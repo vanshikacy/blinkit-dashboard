@@ -1,4 +1,3 @@
-import './App.css'
 import KPI from './components/shared/KPI'
 import OrderPerDay from './components/OrdersPerDay'
 import { getAvgOrderValue, getCancellationRate, getTotalOrders } from './services/api'
@@ -7,6 +6,8 @@ import OrdersPerCity from './components/OrdersPerCity'
 import RevenuePerCity from './components/RevenuePercity'
 import AvgDeliveryTimePerCity from './components/AvgDeliveryTimePerCity'
 import CancellationPerCity from './components/CancellationPerCity'
+import Top5Riders from './components/Top5Riders'
+import OrdersPerHour from './components/OrdersPerHour'
 
 function App() {
 
@@ -16,11 +17,13 @@ function App() {
       <KPI title={"Average Order Value"} apifunction={getAvgOrderValue()} />
       <KPI title={"Cancellation Rate"} apifunction={getCancellationRate()} />
       <OrderPerDay />
+      <OrdersPerHour />
       <DeliveryTimePerHour />
       <OrdersPerCity />
       <RevenuePerCity />
       <AvgDeliveryTimePerCity />
       <CancellationPerCity />
+      <Top5Riders />
     </div>
   )
 }

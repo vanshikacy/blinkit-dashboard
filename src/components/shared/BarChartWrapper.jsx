@@ -1,4 +1,4 @@
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 export default function BarChartWrapper({data, xaxis, yaxis}) {
     console.log(data);
@@ -9,6 +9,7 @@ export default function BarChartWrapper({data, xaxis, yaxis}) {
                     <XAxis dataKey={xaxis} />
                     <YAxis/>
                     <Bar dataKey={yaxis} barSize={70}/>
+                    <Tooltip />
                 </BarChart>
             </ResponsiveContainer>
         </>

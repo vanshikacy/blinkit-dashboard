@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getOrderPerDay } from "../../services/api";
-import { Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 function LineChartWrapper({data, xaxis, yaxis}) {
 
@@ -34,10 +34,11 @@ function LineChartWrapper({data, xaxis, yaxis}) {
             <button onClick={handleNextClick}>Next</button>
         </div>
             <ResponsiveContainer height={300} width="80%">
-                <LineChart data={filteredData}>
+                <LineChart data={filteredData} responsive >
                     <XAxis dataKey={xaxis}/>
                     <YAxis/>
-                    <Line dataKey={yaxis} />
+                    <Line dataKey={yaxis} type="monotone" strokeWidth={3} />
+                    <Tooltip />
                 </LineChart>
             </ResponsiveContainer>
         </div>

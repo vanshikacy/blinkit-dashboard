@@ -91,3 +91,23 @@ export const getCancellationPerCity = async () => {
         throw e;
     }
 }
+
+export const getTop5Riders = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/top-5-riders`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getOrderPerHour = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/orders-per-hour`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
