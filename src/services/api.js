@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/analytics";
+const BASE_URL = "https://blinkit-analytics-backend-production.up.railway.app/analytics";
 
 export const getTotalOrders = async () => {
     try {
@@ -105,6 +105,96 @@ export const getTop5Riders = async () => {
 export const getOrderPerHour = async () => {
     try {
         const response = await axios.get(`${BASE_URL}/orders-per-hour`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getOrderPerCategory = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/orders-per-category`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getTotalRevenue = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/total-revenue`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getTotalRiders = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/total-riders`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getAvgDeliveryTime = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/avg-delivery-time`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getOrderPerPaymentMethod = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/orders-per-payment-method`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getZoneWiseDistribution = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/zone-wise-distribution`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getRidersPerCity = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/rider-per-city`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getRiderUtilization = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/rider-utilization`);
+        return response.data;
+    }catch(e){
+        console.error(e);
+        throw e;
+    }
+}
+
+export const getRepeatCustomers = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/repeat-customers`);
         return response.data;
     }catch(e){
         console.error(e);

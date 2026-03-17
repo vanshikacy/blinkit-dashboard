@@ -9,6 +9,7 @@ import CancellationPerCity from './components/CancellationPerCity'
 import Top5Riders from './components/Top5Riders'
 import OrdersPerHour from './components/OrdersPerHour'
 import Dashboard from './pages/Dashboard'
+import OrdersPerCategory from './components/OrdersPerCategory'
 
 function App() {
 

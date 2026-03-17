@@ -1,24 +1,33 @@
 import AvgDeliveryTimePerCity from "../components/AvgDeliveryTimePerCity";
 import CancellationPerCity from "../components/CancellationPerCity";
 import DeliveryTimePerHour from "../components/DeliverTimePerHour";
+import OrdersPerPaymentMethod from "../components/OrderPerPaymentMethod";
+import OrdersPerCategory from "../components/OrdersPerCategory";
 import OrdersPerCity from "../components/OrdersPerCity";
 import OrderPerDay from "../components/OrdersPerDay";
 import OrdersPerHour from "../components/OrdersPerHour";
 import RevenuePerCity from "../components/RevenuePercity";
+import RiderPerCity from "../components/RiderPerCity";
+import RiderUtilization from "../components/RiderUtilization";
 import KPI from "../components/shared/KPI";
 import Top5Riders from "../components/Top5Riders";
-import { getTotalOrders, getAvgOrderValue, getCancellationRate } from "../services/api";
+import ZoneWiseDistribution from "../components/ZoneWiseDistribution";
+import { getTotalOrders, getAvgOrderValue, getCancellationRate, getTotalRevenue, getTotalRiders, getAvgDeliveryTime, getRepeatCustomers } from "../services/api";
 
 export default function Dashboard() {
     return(
-        <div className="flex flex-col justify-center items-center gap-12">
+        <div className="flex flex-col justify-center items-center gap-12 w-full">
             <div className="text-[40px] font-inter mb-5">
                 BLINKIT ANALYTICS DASHBOARD
             </div>
-            <div className="flex gap-16 text-[20px]">
+            <div className="flex gap-4 text-[20px]">
                 <KPI title={"Total Orders"} apifunction={getTotalOrders()}/>
                 <KPI title={"Average Order Value"} apifunction={getAvgOrderValue()} />
                 <KPI title={"Cancellation Rate"} apifunction={getCancellationRate()} />
+                <KPI title={"Total Revenue"} apifunction={getTotalRevenue()} />
+                <KPI title={"Total Riders"} apifunction={getTotalRiders()} />
+                <KPI title={"Average Delivery Time"} apifunction={getAvgDeliveryTime()} />
+                <KPI title={"Repeat Customers"} apifunction={getRepeatCustomers()} />
             </div>
             <div className="font-inter text-[30px] font-semibold">
                 DEMAND
@@ -27,6 +36,7 @@ export default function Dashboard() {
                 <OrdersPerHour />
                 <OrdersPerCity />
                 <OrderPerDay />
+                <ZoneWiseDistribution />
             </div>
             <div className="font-inter text-[30px] font-semibold">
                 OPERATIONAL
@@ -36,12 +46,20 @@ export default function Dashboard() {
                 <RevenuePerCity />
                 <CancellationPerCity />
                 <DeliveryTimePerHour />
+                <RiderUtilization />
+                <RiderPerCity />    
             </div>
             <div className="font-inter text-[30px] font-semibold">
                 TOP RIDERS
             </div>
             <div>
                 <Top5Riders />
+            </div>
+            <div className="w-full">
+                <OrdersPerCategory />
+            </div>
+            <div className="w-full">
+                <OrdersPerPaymentMethod />
             </div>
         </div>
     )
