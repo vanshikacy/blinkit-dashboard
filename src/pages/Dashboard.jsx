@@ -6,7 +6,7 @@ import OrdersPerCategory from "../components/OrdersPerCategory";
 import OrdersPerCity from "../components/OrdersPerCity";
 import OrderPerDay from "../components/OrdersPerDay";
 import OrdersPerHour from "../components/OrdersPerHour";
-import RevenuePerCity from "../components/RevenuePercity";
+import RevenuePerCity from "../components/RevenuePerCity";
 import RiderPerCity from "../components/RiderPerCity";
 import RiderUtilization from "../components/RiderUtilization";
 import KPI from "../components/shared/KPI";
