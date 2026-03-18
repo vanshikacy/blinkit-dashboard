@@ -6,14 +6,14 @@
   --bg-elevated: #2A2A2A;
 
   /* ACCENT (Blinkit) */
-  --accent-primary: #FFE141;
-  --accent-hover: #FFD600;
+  --accent-primary: #F8CB45;
+  --accent-hover: #E6BA3D;
 
   /* TEXT */
   --text-primary: #FFFFFF;
   --text-secondary: #A0A0A0;
   --text-muted: #6B6B6B;
-  --blinkit-green: #0C8F5F;
+  --blinkit-green: #54B226;
 
   /* SEMANTIC */
   --success: #4CAF50;
